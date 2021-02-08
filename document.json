@@ -21,7 +21,7 @@
   },
 "deployment_information": {
   "Project": "/home/student/projects/RabbitMq-chart-yamls",
-  "Deployment Namespace": "kafka"
+  "Deployment Namespace": "rabbitmq"
 },
  "commands": [
   {
