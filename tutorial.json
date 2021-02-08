@@ -20,8 +20,8 @@
       {
          "description":" Configuration parameters of rabbitmq helmc chart",
          "duration":"5 min",
-         "tutorial_name":"cConfiguration-parameters-of-rabbitmq-helm-chart.md",
-         "title":"Configuration Parameters of Kafka Helm Chart Tutorial"
+         "tutorial_name":"configuration-parameters-of-rabbitmq-helm-chart.md",
+         "title":"Configuration Parameters of rabbitmq Helm Chart Tutorial"
       },
       {
          "description":" How to Upgrade and Rollback kafka helm chart tutorial",
