@@ -1,0 +1,51 @@
+{
+  "name": "RabbitMq Helm Chart",
+  "description": "RabbitMq Bitnami Helm Chart",
+  "logo": "_images/Custom.png",
+  "has_supporting_content": true,
+  "stack_id": "",
+  "type": "Helm",
+  "categories": ["Conterization"],
+  "platform": "Kubernetes",
+  "cover": "cover.md",
+  "meta": {
+        "Type": [
+            "Helm"
+        ],
+        "Install time": [
+            "10 minutes"
+        ],
+        "Categories": [
+            "Conterization"
+        ]
+  },
+"deployment_information": {
+  "Project": "/home/student/projects/RabbitMq-chart-yamls",
+  "Deployment Namespace": "kafka"
+},
+ "commands": [
+  {
+    "description": "Add Bitnami Repo",
+    "exec": "helm repo add bitnami https://charts.bitnami.com/bitnami"
+  }, 
+  {
+      "description": "Create Namespace",
+      "exec": "kubectl create ns rabbitmq"
+    },
+   {
+      "description": "Install RabbitMq Chart",
+      "exec": "helm install rabbitmq bitnami/rabbitmq -n rabbitmq" 
+    },
+    {
+      "description": "List all releases",
+      "exec": "helm list -n rabbitmq"
+    }
+  ],
+  "display": [
+    {
+      "name": "Developer Dashboard",
+      "url": "##DNS.host##/codeserver",
+      "enabled": true
+    }
+  ]
+}

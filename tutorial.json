@@ -1,0 +1,47 @@
+{
+   "name":"RabbitMq Helm Chart Tutorial",
+   "appLayout":"accordion",
+   "appTheme":"g90",
+   "footer":"footer.md",
+   "tutorials":[
+      {
+         "description":" How to create RabbitMq Helm chart",
+         "duration":"5 min",
+         "tutorial_name":"create-rabbitmq-helmchart.md",
+         "title":"create RabbitMq Helm chart"
+      },
+      {
+         "description":"Verify rabbitmq chart installation",
+         "duration":"10 min",
+         "tutorial_name":"verify-rabbitmq-chart-installation.md",
+         "title":"Verify Chart installtion is Sucessfull"
+      },
+
+      {
+         "description":" Configuration parameters of rabbitmq helmc chart",
+         "duration":"5 min",
+         "tutorial_name":"cConfiguration-parameters-of-rabbitmq-helm-chart.md",
+         "title":"Configuration Parameters of Kafka Helm Chart Tutorial"
+      },
+      {
+         "description":" How to Upgrade and Rollback kafka helm chart tutorial",
+         "duration":"15 min",
+         "tutorial_name":"upgrading-and-rollback-rabbitmq.md",
+         "title":"Upgrade and Rollback rabbitmq Helm Chart tutorial"
+      },
+      {
+         "description":" How to uninstall Helm Chart",
+         "duration":"5 min",
+         "tutorial_name":"uninstall-helm-chart.md",
+         "title":"Uninstall rabbitmq Helm Chart"
+      }
+      
+   ],
+   "usefulLinks":[
+      {
+         "title":"Kafka Helm Chart",
+         "description":"Kafka Bitnami Helm Chart",
+         "url":"https://bitnami.com/stack/kafka/helm"
+      }
+   ]
+}
