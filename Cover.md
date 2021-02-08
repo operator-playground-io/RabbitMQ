@@ -73,5 +73,18 @@ Even when the node is properly clustered with the discovery node, its data can s
 Using this rabbitmqctl command we can both detect any problem with our rabbit node and stop it immediately, so kubernetes will have a chance to do its restarting magic.
 
 
+# Objective of tutorial
+
+In this tutorial,we are going to cover following topics:
+
+- How to Install RabbitMq Bitnami Helm Chart and verify its successful installation.
+
+- Verify status of pods and services. 
+
+- Deploy a test client that will execute scripts against the Kafka cluster.
+
+- Uninstall Kafka Helm Chart and release resources.
+
+
 
 
