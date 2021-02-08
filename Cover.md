@@ -81,9 +81,9 @@ In this tutorial,we are going to cover following topics:
 
 - Verify status of pods and services. 
 
-- Deploy a test client that will execute scripts against the Kafka cluster.
+- Deploy a test client that will execute scripts against the RabbitMq cluster.
 
-- Uninstall Kafka Helm Chart and release resources.
+- Uninstall RabbitMq Helm Chart and release resources.
 
 
 
