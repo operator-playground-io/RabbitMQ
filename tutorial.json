@@ -40,8 +40,8 @@
    "usefulLinks":[
       {
          "title":"RabbitMq Helm Chart",
-         "description":"Kafka Bitnami Helm Chart",
-         "url":"https://bitnami.com/stack/kafka/helm"
+         "description":"RabbitMq Bitnami Helm Chart",
+         "url":"https://bitnami.com/stack/RabbitMq/helm"
       }
    ]
 }
