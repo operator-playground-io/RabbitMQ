@@ -1,5 +1,5 @@
 {
-    "title": "RabbitMq",
+    "title": "RabbitMq Helm chart",
     "description": "RabbitMq",
     "logo": "",
     "enabled": true,
