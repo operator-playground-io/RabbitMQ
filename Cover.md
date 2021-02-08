@@ -70,10 +70,6 @@ It should be clustered with the best node registered in the autocluster backend.
 
 Even when the node is properly clustered with the discovery node, its data can still be diverged. Also this check is not transitive, so we need to check the partitions list both on the current node and on the discovery node.
 
-All these clustering checks are implemented in separate commits and can be invoked using:
-
-rabbitmqctl eval ‘autocluster:cluster_health_check_report().’
-
 Using this rabbitmqctl command we can both detect any problem with our rabbit node and stop it immediately, so kubernetes will have a chance to do its restarting magic.
 
 
