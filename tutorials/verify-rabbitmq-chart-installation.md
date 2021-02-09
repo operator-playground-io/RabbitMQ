@@ -40,9 +40,8 @@ at <<EOF | kubectl apply -f -
 >       storage: 10Gi
 > EOF
 ```
-```
+
 persistentvolumeclaim/data-rabbitmq created
-```
 
 ```
 helm install rabbitmq --set auth.username=admin,auth.password=passw0rd123,auth.erlangCookie=secretcookie,persistence.existingClaim=data-rabbitmq bitnami/rabbitmq -n rabbitmq
@@ -79,10 +78,10 @@ To Access the RabbitMQ Management interface:
 
     echo "URL : http://127.0.0.1:15672/"
     kubectl port-forward --namespace rabbitmq svc/rabbitmq 15672:15672
+    
 ```
 
-
-Once the helm chart installation done you need to verify all the pods and services are up and running.
+Once the helm chart installation done you need to verify all the pods and services are up and running
 
 Execute below command to check status of pods and services: 
 
