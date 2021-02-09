@@ -18,12 +18,6 @@ $ helm install rabbitmq \
 
 The above command sets the RabbitMQ admin username and password to `admin` and `secretpassword` respectively. Additionally the secure erlang cookie is set to `secretcookie`.
 
-Alternatively, a YAML file that specifies the values for the parameters can be provided while installing the chart. For example,
-
-```execute
-$ helm install rabbitmq -f values.yaml bitnami/rabbitmq -n rabbitmq
-```
-
 > **Tip**: You can use the default [values.yaml](values.yaml)
 
 ### Configuration and installation details
