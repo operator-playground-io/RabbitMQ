@@ -76,6 +76,16 @@ rabbitmqctl eval ‘autocluster:cluster_health_check_report().’
 
 Using this rabbitmqctl command we can both detect any problem with our rabbit node and stop it immediately, so kubernetes will have a chance to do its restarting magic.
 
+###Objective of tutorial
+
+In this tutorial,we are going to cover following topics:
+
+How to create RabbitMq Bitnami Helm Chart and verify its successful installation.
+
+Verify status of pods and services.
+
+Uninstall RabbitMq Helm Chart and release resources.
+
 
 
 
