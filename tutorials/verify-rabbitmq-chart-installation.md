@@ -1,47 +1,36 @@
 ---
 title: Verify rabbitmq Chart Installation
 description: This tutorial explains how to verify that rabbitmq chart installed successfully
----
-```
-cat <<EOF | kubectl apply -f -
-> apiVersion: v1
-> kind: PersistentVolumeClaim
-> metadata:
->   name: data-rabbitmq
->   namespace: rabbitmq
->   annotations:
->     volume.beta.kubernetes.io/storage-class: "default"
-> spec:
->   accessModes:
->     - ReadWriteOnce
->   resources:
->     requests:
->       storage: 10Gi
-> EOF
+--
+
 
 **To Create Namespace**
 
 ```execute
 kubectl create ns rabbitmq
 ```
-at <<EOF | kubectl apply -f -
-> apiVersion: v1
-> kind: PersistentVolumeClaim
-> metadata:
->   name: data-rabbitmq
->   namespace: rabbitmq
->   annotations:
->     volume.beta.kubernetes.io/storage-class: "default"
-> spec:
->   accessModes:
->     - ReadWriteOnce
->   resources:
->     requests:
->       storage: 10Gi
-> EOF
+
+```
+cat <<EOF | kubectl apply -f -
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: data-rabbitmq
+   namespace: rabbitmq
+   annotations:
+     volume.beta.kubernetes.io/storage-class: "default"
+ spec:
+   accessModes:
+     - ReadWriteOnce
+   resources:
+     requests:
+       storage: 10Gi
+ EOF
+ 
 ```
 
 persistentvolumeclaim/data-rabbitmq created
+
 
 ```
 helm install rabbitmq --set auth.username=admin,auth.password=passw0rd123,auth.erlangCookie=secretcookie,persistence.existingClaim=data-rabbitmq bitnami/rabbitmq -n rabbitmq
@@ -81,7 +70,7 @@ To Access the RabbitMQ Management interface:
     
 ```
 
-Once the helm chart installation done you need to verify all the pods and services are up and running
+**Once the helm chart installation done you need to verify all the pods and services are up and running**
 
 Execute below command to check status of pods and services: 
 
@@ -224,7 +213,9 @@ Events:
  ```
  kubectl port-forward pod/rabbitmq-0 15672:15672 -n rabbitmq
  ```
+ 
  Output will be similar to this
+ 
  ```
  Forwarding from 127.0.0.1:15672 -> 15672
 Forwarding from [::1]:15672 -> 15672
@@ -255,6 +246,9 @@ Handling connection for 15672
 Handling connection for 15672
 Handling connection for 15672
 Handling connection for 15672
+
 ```
+
+Copy Kubernetes cluster IP address and portnumber and place that in browser and you should see RabbitMq UI. 
 
 
