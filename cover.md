@@ -80,6 +80,8 @@ Using this rabbitmqctl command we can both detect any problem with our rabbit no
 
 In this tutorial,we are going to cover following topics:
 
+How RabbitMQ works on Kubernetes?
+
 How to create RabbitMq Bitnami Helm Chart and verify its successful installation.
 
 Verify status of pods and services.
