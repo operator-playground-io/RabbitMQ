@@ -22,19 +22,19 @@ The above command sets the RabbitMQ admin username and password to `admin` and `
 
 ### Configuration and installation details
 
-### [Rolling VS Immutable tags](https://docs.bitnami.com/containers/how-to/understand-rolling-tags-containers/)
+**[Rolling VS Immutable tags]** (https://docs.bitnami.com/containers/how-to/understand-rolling-tags-containers/)
 
 It is strongly recommended to use immutable tags in a production environment. This ensures your deployment does not change automatically if the same tag is updated with a different image.
 
 Bitnami will release a new chart updating its containers if a new version of the main container, significant changes, or critical vulnerabilities exist.
 
-### Setting Pod's affinity
+ **Setting Pod's affinity**
 
 This chart allows you to set your custom affinity using the `affinity` parameter. Find more information about Pod's affinity in the [kubernetes documentation](https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#affinity-and-anti-affinity).
 
 As an alternative, you can use of the preset configurations for pod affinity, pod anti-affinity, and node affinity available at the [bitnami/common](https://github.com/bitnami/charts/tree/master/bitnami/common#affinities) chart. To do so, set the `podAffinityPreset`, `podAntiAffinityPreset`, or `nodeAffinityPreset` parameters.
 
-### Horizontal scaling
+ **Horizontal scaling**
 
 To horizontally scale this chart once it has been deployed you have two options:
 
@@ -99,13 +99,13 @@ auth:
 - Setting [auth.tls.failIfNoPeerCert](https://www.rabbitmq.com/ssl.html#peer-verification-configuration) to `false` allows a TLS connection if client fails to provide a certificate.
 - When setting [auth.tls.sslOptionsVerify](https://www.rabbitmq.com/ssl.html#peer-verification-configuration) to `verify_peer`, the node must perform peer verification. When set to `verify_none`, peer verification will be disabled and certificate exchange won't be performed.
 
-#### TLS integration with `cert-manager` (Let's Encrypt certificates)
+**TLS integration with `cert-manager` (Let's Encrypt certificates)**
 
 If using `cert-manager` to provision Let's Encrypt certificates, the `tls.crt` key in the generated TLS secret will contain the full certificate chain. Depending on the version of `cert-manager` in use, there can either be an empty `ca.crt` key, or none at all.
 
 In order to instruct RabbitMQ to look for the CA certificate within the primary certificate, `auth.tls.existingSecretFullChain` can be set to `true`.
 
-### Load Definitions
+**Load Definitions**
 
 It is possible to [load a RabbitMQ definitions file to configure RabbitMQ](http://www.rabbitmq.com/management.html#load-definitions). Because definitions may contain RabbitMQ credentials, [store the JSON as a Kubernetes secret](https://kubernetes.io/docs/concepts/configuration/secret/#using-secrets-as-files-from-a-pod). Within the secret's data, choose a key name that corresponds with the desired load definitions filename (i.e. `load_definition.json`) and use the JSON object as the value. For example:
 
@@ -164,7 +164,7 @@ extraConfiguration: |
   load_definitions = /app/load_definition.json
 ```
 
-### LDAP
+ **LDAP**
 
 LDAP support can be enabled in the chart by specifying the `ldap.` parameters while creating a release. The following parameters should be configured to properly enable the LDAP support in the chart.
 
@@ -185,7 +185,7 @@ ldap.user_dn_pattern="cn=${username},dc=example,dc=org"
 
 If `ldap.tls.enabled` is set to true, consider using `ldap.port=636` and checking the settings in the advancedConfiguration.
 
-### Memory high watermark
+ **Memory high watermark**
 
 It is possible to configure Memory high watermark on RabbitMQ to define [memory thresholds](https://www.rabbitmq.com/memory.html#threshold) using the `memoryHighWatermark.*` parameters. To do so, you have two alternatives:
 
@@ -206,7 +206,7 @@ memoryHighWatermark.value="0.4"
 resources.limits.memory="2Gi"
 ```
 
-### Adding extra environment variables
+**Adding extra environment variables**
 
 In case you want to add extra environment variables (useful for advanced operations like custom init scripts), you can use the `extraEnvVars` property.
 
@@ -218,7 +218,7 @@ extraEnvVars:
 
 Alternatively, you can use a ConfigMap or a Secret with the environment variables. To do so, use the `.extraEnvVarsCM` or the `extraEnvVarsSecret` properties.
 
-### Plugins
+**Plugins**
 
 The Bitnami Docker RabbitMQ image ships a set of plugins by default. You can use the command below to obtain the whole list.
 
@@ -235,17 +235,17 @@ communityPlugins="http://some-public-url/my-custom-plugin-X.Y.Z.ez"
 extraPlugins="my-custom-plugin"
 ```
 
-### Known issues
+ **Known issues**
 
 - Changing the password through RabbitMQ's UI can make the pod fail due to the default liveness probes. If you do so, remember to make the chart aware of the new password. Updating the default secret with the password you set through RabbitMQ's UI will automatically recreate the pods. If you are using your own secret, you may have to manually recreate the pods.
 
-### Persistence
+**Persistence**
 
 The [Bitnami RabbitMQ](https://github.com/bitnami/bitnami-docker-rabbitmq) image stores the RabbitMQ data and configurations at the `/opt/bitnami/rabbitmq/var/lib/rabbitmq/` path of the container.
 
 The chart mounts a [Persistent Volume](http://kubernetes.io/docs/user-guide/persistent-volumes/) at this location. By default, the volume is created using dynamic volume provisioning. An existing PersistentVolumeClaim can also be defined.
 
-### Existing PersistentVolumeClaims
+ **Existing PersistentVolumeClaims**
 
 1. Create the PersistentVolume
 1. Create the PersistentVolumeClaim
@@ -255,7 +255,7 @@ The chart mounts a [Persistent Volume](http://kubernetes.io/docs/user-guide/pers
 $ helm install rabbitmq --set persistence.existingClaim=PVC_NAME bitnami/rabbitmq -n rabbitmq
 ```
 
-### Adjust permissions of the persistence volume mountpoint
+ **Adjust permissions of the persistence volume mountpoint**
 
 As the image runs as non-root by default, it is necessary to adjust the ownership of the persistent volume so that the container can write data into it.
 
@@ -264,7 +264,7 @@ As an alternative, this chart supports using an `initContainer` to change the ow
 
 You can enable this `initContainer` by setting `volumePermissions.enabled` to `true`.
 
-### Configure the default user/vhost
+ **Configure the default user/vhost**
 
 If you want to create default user/vhost and set the default permission. you can use `extraConfiguration`:
 
