@@ -43,9 +43,11 @@ at <<EOF | kubectl apply -f -
 ```
 persistentvolumeclaim/data-rabbitmq created
 ```
+
 ```
 helm install rabbitmq --set auth.username=admin,auth.password=passw0rd123,auth.erlangCookie=secretcookie,persistence.existingClaim=data-rabbitmq bitnami/rabbitmq -n rabbitmq
 ```
+
 Your Output will look similar to this 
 
 ```
