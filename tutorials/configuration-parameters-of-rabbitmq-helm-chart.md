@@ -3,9 +3,6 @@ title: Configuration Parameters of rabbitmq Helm Chart
 description: This tutorial explains about Configuration Parameters
 ---
 
-
-### Configuration Parameters of rabbitmq Helm Chart
-
 ### Parameters
 
 Please check the below link for Parameters.
@@ -13,7 +10,7 @@ Please check the below link for Parameters.
 https://github.com/bitnami/charts/tree/master/bitnami/rabbitmq 
 
 
-```bash
+```execute
 $ helm install rabbitmq \
   --set auth.username=admin,auth.password=secretpassword,auth.erlangCookie=secretcookie \
     bitnami/rabbitmq -n rabbitmq
@@ -23,7 +20,7 @@ The above command sets the RabbitMQ admin username and password to `admin` and `
 
 Alternatively, a YAML file that specifies the values for the parameters can be provided while installing the chart. For example,
 
-```bash
+```execute
 $ helm install rabbitmq -f values.yaml bitnami/rabbitmq -n rabbitmq
 ```
 
@@ -61,7 +58,7 @@ auth.erlangCookie="$RABBITMQ_ERLANG_COOKIE"
 
 When scaling down the solution unnecessary RabbitMQ nodes are automatically stopped, but they are not removed from the cluster. You need to manually remove them running the `rabbitmqctl forget_cluster_node` command. For instance, if you initially installed RabbitMQ with 3 replicas and then you scaled it down to 2 replicas, run the commands below (assuming that the release name is `rabbitmq` and you're using `hostname` as clustering type):
 
-```console
+```execute
 $ kubectl exec rabbitmq-0 --container rabbitmq -- rabbitmqctl forget_cluster_node rabbit@rabbitmq-2.rabbitmq-headless.default.svc.cluster.local
 $ kubectl delete pvc data-rabbitmq-2
 ```
@@ -72,13 +69,13 @@ To enable TLS support you must generate the certificates using RabbitMQ [documen
 
 A) Create a secret including the certificates:
 
-```bash
+```execute
 $ kubectl create secret generic rabbitmq-certificates --from-file=./ca.crt --from-file=./tls.crt --from-file=./tls.key
 ```
 
 Then, install the RabbitMQ chart setting the parameters below:
 
-```console
+```execute
 tls.enabled=true
 tls.existingSecret=rabbitmq-certificates
 ```
