@@ -18,8 +18,6 @@ $ helm install rabbitmq \
 
 The above command sets the RabbitMQ admin username and password to `admin` and `secretpassword` respectively. Additionally the secure erlang cookie is set to `secretcookie`.
 
-> **Tip**: You can use the default [values.yaml](values.yaml)
-
 ### Configuration and installation details
 
 **[Rolling VS Immutable tags]** (https://docs.bitnami.com/containers/how-to/understand-rolling-tags-containers/)
