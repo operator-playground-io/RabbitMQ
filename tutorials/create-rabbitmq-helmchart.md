@@ -23,11 +23,7 @@ Bitnami charts can be used with [Kubeapps](https://kubeapps.com/) for deployment
 
 ### Installing the Chart
 
-To install the chart with the release name `rabbitmq`:
-
-```bash
-$ helm install rabbitmq bitnami/rabbitmq -n rabbitmq
-```
+To install the chart
 
 The command deploys RabbitMQ on the Kubernetes cluster in the default configuration. The [Parameters](#parameters) section lists the parameters that can be configured during installation.
 
