@@ -14,7 +14,8 @@ Check your deployed rabbitmq helm chart:
  Output will be similar:
 
 ```output
-
+NAME    	NAMESPACE	REVISION	UPDATED                                	STATUS  	CHART         	APP VERSION
+rabbitmq	rabbitmq 	1       	2021-02-03 14:49:03.639011791 -0600 CST	deployed	rabbitmq-8.9.2	3.8.11    
 ```
 
 To uninstall the rabbitmq helm chart, use the helm delete command:
@@ -52,10 +53,4 @@ kubectl -n rabbitmq get pvc | grep rabbitmq
 
 ```execute
 kubectl -n rabbitmq delete pvc/PVC_VOLUME
-```
-
-Output:
-
-```output
-
 ```
