@@ -6,7 +6,7 @@ description: This tutorial explains about Configuration Parameters
 
 ### Configuration Parameters of rabbitmq Helm Chart
 
-## Parameters
+### Parameters
 
 The following table lists the configurable parameters of the RabbitMQ chart and their default values.
 
@@ -239,7 +239,7 @@ $ helm install rabbitmq -f values.yaml bitnami/rabbitmq -n rabbitmq
 
 > **Tip**: You can use the default [values.yaml](values.yaml)
 
-## Configuration and installation details
+### Configuration and installation details
 
 ### [Rolling VS Immutable tags](https://docs.bitnami.com/containers/how-to/understand-rolling-tags-containers/)
 
@@ -457,7 +457,7 @@ extraPlugins="my-custom-plugin"
 
 - Changing the password through RabbitMQ's UI can make the pod fail due to the default liveness probes. If you do so, remember to make the chart aware of the new password. Updating the default secret with the password you set through RabbitMQ's UI will automatically recreate the pods. If you are using your own secret, you may have to manually recreate the pods.
 
-## Persistence
+### Persistence
 
 The [Bitnami RabbitMQ](https://github.com/bitnami/bitnami-docker-rabbitmq) image stores the RabbitMQ data and configurations at the `/opt/bitnami/rabbitmq/var/lib/rabbitmq/` path of the container.
 
