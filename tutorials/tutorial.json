@@ -20,7 +20,7 @@
       {
          "description":" Configuration parameters of rabbitmq helm chart",
          "duration":"5 min",
-         "tutorial_name":"Configuration-parameters-of-rabbitmq-helm-chart.md",
+         "tutorial_name":"configuration-parameters-of-rabbitmq-helm-chart.md",
          "title":"Configuration Parameters of rabbitmq Helm Chart Tutorial"
       },
       {
