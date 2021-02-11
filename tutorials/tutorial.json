@@ -34,6 +34,11 @@
          "duration":"5 min",
          "tutorial_name":"uninstall-helm-chart.md",
          "title":"Uninstall rabbitmq Helm Chart"
+      },{
+         "description":"",
+         "duration": "5 min",
+         "tutorial_name":"sample-application.md",
+         "title":"Exploring a Sample RabbitMq Application"
       }
       
    ],
