@@ -47,8 +47,8 @@ Create the email payload in the application, and specify number of mails and tim
 
 The inputs can be provided in the application as shown
 
-![](_images/app.jpg)
+![](_images/app.JPG)
 
 The mails can be viewed in the mail server as shown
 
-![](_images/mail.jpg)
+![](_images/mail.JPG)
