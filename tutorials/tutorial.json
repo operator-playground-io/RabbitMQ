@@ -8,37 +8,37 @@
          "description":" How to create RabbitMq Helm chart",
          "duration":"5 min",
          "tutorial_name":"create-rabbitmq-helmchart.md",
-         "title":"create RabbitMq Helm chart"
+         "title":"1. Create RabbitMq Helm chart"
       },
       {
          "description":"Verify rabbitmq chart installation",
          "duration":"10 min",
          "tutorial_name":"verify-rabbitmq-chart-installation.md",
-         "title":"Verify Chart installtion is Sucessfull"
+         "title":"2. Verify Chart installtion is Sucessfull"
       },
 
       {
          "description":" Configuration parameters of rabbitmq helm chart",
          "duration":"5 min",
          "tutorial_name":"configuration-parameters-of-rabbitmq-helm-chart.md",
-         "title":"Configuration Parameters of rabbitmq Helm Chart Tutorial"
+         "title":"3. Configuration Parameters of rabbitmq Helm Chart Tutorial"
       },
       {
          "description":" How to Upgrade and Rollback rabbitmq helm chart tutorial",
          "duration":"15 min",
          "tutorial_name":"upgrading-and-rollback-rabbitmq.md",
-         "title":"Upgrade and Rollback rabbitmq Helm Chart tutorial"
+         "title":"4. Upgrade and Rollback rabbitmq Helm Chart tutorial"
       },
       {
          "description":" How to uninstall Helm Chart",
          "duration":"5 min",
          "tutorial_name":"uninstall-helm-chart.md",
-         "title":"Uninstall rabbitmq Helm Chart"
+         "title":"5. Uninstall rabbitmq Helm Chart"
       },{
          "description":"",
          "duration": "5 min",
          "tutorial_name":"sample-application.md",
-         "title":"Exploring a Sample RabbitMq Application"
+         "title":"6. Exploring a Sample RabbitMq Application"
       }
       
    ],
