@@ -14,13 +14,13 @@ The `message payload generator`, generates mail payload according to the inputs 
 Clone the application files from the [git repositorygit repository](https://github.com/operator-playground-io/RabbitMQ-Sample-Project.git)
 
 ```execute
-git clone https://github.com/operator-playground-io/RabbitMQ-Sample-Project.git
+git clone https://github.com/operator-playground-io/RabbitMQ-Sample-Project.git projects/sample-app
 ```
 
 Change directoy tp the project directory usin this command
 
 ```execute 
-cd RabbitMQ-Sample-Project
+cd projects/sample-app
 ```
 
 ### Running the application
@@ -35,7 +35,7 @@ skaffold config set default-repo localhost:5000
 
 Skaffold is now ready for use. Executing the command given below, builds the image and pushes it to the local image registry. Consecutively, the deployment and service are created from the manifest files present in k8s folder.
 
-```
+```execute
 skaffold dev
 ```
 
