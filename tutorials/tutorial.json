@@ -8,13 +8,13 @@
          "description":" How to create RabbitMq Helm chart",
          "duration":"5 min",
          "tutorial_name":"create-rabbitmq-helmchart.md",
-         "title":"1. Create RabbitMq Helm chart"
+         "title":"1. About RabbitMq Helm chart"
       },
       {
          "description":"Verify rabbitmq chart installation",
          "duration":"10 min",
          "tutorial_name":"verify-rabbitmq-chart-installation.md",
-         "title":"2. Verify Chart installtion is Sucessfull"
+         "title":"2. Setup RabbitMq Helm chart"
       },
 
       {
