@@ -44,13 +44,13 @@ statefulset.apps/rabbitmq   1/1     59s
 To access RabbitMq outside the cluster, the pod's port(15672) must be exposed locally with the following command.
 
 ```execute
-kubectl port-forward pod/rabbitmq-0 15672:15672 -n rabbitmq
+kubectl port-forward pod/rabbitmq-0 15672:15672 --address 0.0.0.0 -n rabbitmq
 ```
  
 Output will be similar to this
  
 ```output
-[student@event-k8s-ibm-operators-playground-vbpdqc ~]$ kubectl port-forward pod/rabbitmq-0 15672:15672 --address 0.0.0.0 -n rabbitmq
+[student@event-k8s-ibm-operators-playground-vbpdqc ~]$ 
 Forwarding from 0.0.0.0:15672 -> 15672
 ```
 
