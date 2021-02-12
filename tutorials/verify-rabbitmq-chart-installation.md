@@ -1,8 +1,3 @@
----
-title: Verify rabbitmq Chart Installation
-description: This tutorial explains how to verify that rabbitmq chart installed successfully
---
-
 ### Verify Helm Chart Installation
 
 Once the helm chart installation done you need to verify all the pods and services are up and running
