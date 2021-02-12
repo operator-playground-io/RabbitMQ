@@ -40,9 +40,8 @@ service/rabbitmq-headless   ClusterIP   None           <none>        4369/TCP,56
 NAME                        READY   AGE
 statefulset.apps/rabbitmq   1/1     59s
 ```
- 
-**Port Forwading**
-To access RabbitMq to the host, the pod's port(15672) must be exposed locally with the following command.
+### Accessing RabbitMq outside Kubernetes cluster
+To access RabbitMq outside the cluster, the pod's port(15672) must be exposed locally with the following command.
 
 ```execute
 kubectl port-forward pod/rabbitmq-0 15672:15672 -n rabbitmq
@@ -53,12 +52,8 @@ Output will be similar to this
 ```output
 [student@event-k8s-ibm-operators-playground-vbpdqc ~]$ kubectl port-forward pod/rabbitmq-0 15672:15672 --address 0.0.0.0 -n rabbitmq
 Forwarding from 0.0.0.0:15672 -> 15672
-Handling connection for 15672
-Handling connection for 15672
-Handling connection for 15672
-.
-.
-.
 ```
+
+Now, the rabbitMq webserver can be accessed from http://##DNS.ip##:15672
 
 Copy Kubernetes cluster IP address and portnumber and place that in browser and you should see RabbitMq UI. 
