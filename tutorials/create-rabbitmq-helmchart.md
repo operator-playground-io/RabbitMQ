@@ -25,12 +25,10 @@ Bitnami charts can be used with [Kubeapps](https://kubeapps.com/) for deployment
 
 To install the chart
 
-The command deploys RabbitMQ on the Kubernetes cluster in the default configuration. The [Parameters](#parameters) section lists the parameters that can be configured during installation. This instance of rabbitMq is installed without povisioning persistent volume, but this can be altered in the `values.yaml` file.
-
-> **Tip**: List all releases using 
+The command deploys RabbitMQ on the Kubernetes cluster in the default configuration. The [Parameters](#parameters) section lists the parameters that can be configured during installation.
 
 ```execute
-helm list -n rabbitmq
+helm install rabbitmq bitnami/rabbitmq
 ```
 
 ### Troubleshooting
