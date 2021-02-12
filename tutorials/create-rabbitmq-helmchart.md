@@ -30,7 +30,7 @@ The command deploys RabbitMQ on the Kubernetes cluster in the default configurat
 > **Tip**: List all releases using 
 
 ```execute
-$ helm list -n rabbitmq
+helm list
 ```
 
 ### Troubleshooting
