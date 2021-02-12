@@ -5,8 +5,8 @@
 ### TL;DR
 
 ```bash
-$ helm repo add bitnami https://charts.bitnami.com/bitnami
-$ helm install rabbitmq bitnami/rabbitmq
+helm repo add bitnami https://charts.bitnami.com/bitnami
+helm install rabbitmq bitnami/rabbitmq --set persistence.enabled=false
 ```
 
 ### Introduction
@@ -25,11 +25,11 @@ Bitnami charts can be used with [Kubeapps](https://kubeapps.com/) for deployment
 
 To install the chart
 
-The command deploys RabbitMQ on the Kubernetes cluster in the default configuration. The [Parameters](#parameters) section lists the parameters that can be configured during installation.
+The command deploys RabbitMQ on the Kubernetes cluster in the default configuration. The [Parameters](#parameters) section lists the parameters that can be configured during installation. This instance of rabbitMq is installed without povisioning persistent volume, but this can be altered in the `values.yaml` file.
 
 > **Tip**: List all releases using 
 
-```bash
+```execute
 $ helm list -n rabbitmq
 ```
 
