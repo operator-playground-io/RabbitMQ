@@ -6,7 +6,7 @@
 
 ```bash
 helm repo add bitnami https://charts.bitnami.com/bitnami
-helm install rabbitmq bitnami/rabbitmq --set persistence.enabled=false
+helm install rabbitmq bitnami/rabbitmq
 ```
 
 ### Introduction
@@ -30,7 +30,7 @@ The command deploys RabbitMQ on the Kubernetes cluster in the default configurat
 > **Tip**: List all releases using 
 
 ```execute
-helm list
+helm list -n rabbitmq
 ```
 
 ### Troubleshooting
