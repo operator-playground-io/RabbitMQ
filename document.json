@@ -34,7 +34,7 @@
     },
    {
       "description": "Install RabbitMq Chart",
-      "exec": "helm install rabbitmq bitnami/rabbitmq -n rabbitmq" 
+      "exec": "helm install rabbitmq bitnami/rabbitmq --set persistence.enabled=false -n rabbitmq" 
     },
     {
       "description": "List all releases",
