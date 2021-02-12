@@ -33,8 +33,8 @@
       "exec": "kubectl create ns rabbitmq"
     },
    {
-      "description": "Install RabbitMq Chart (Persistence is disabled)",
-      "exec": "helm install rabbitmq bitnami/rabbitmq --set persistence.enabled=false" 
+      "description": "Install RabbitMq Chart",
+      "exec": "helm install rabbitmq bitnami/rabbitmq -n rabbitmq" 
     },
     {
       "description": "List all releases",
