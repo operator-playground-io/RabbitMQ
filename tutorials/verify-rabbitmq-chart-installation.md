@@ -3,14 +3,13 @@ title: Verify rabbitmq Chart Installation
 description: This tutorial explains how to verify that rabbitmq chart installed successfully
 --
 
+### Setting up RabbitMq
 
 **To Create Namespace**
 
-```execute
-kubectl create ns rabbitmq
-```
+The default installaion of RabbitMq Helm chart requires the use of Persistent Volume. The following command creates a Persistent Volume Claim manifest.
 
-```
+```execute
 cat <<EOF | kubectl apply -f -
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -26,14 +25,10 @@ metadata:
      requests:
        storage: 10Gi
  EOF
- 
 ```
 
-persistentvolumeclaim/data-rabbitmq created
-
-
 ```
-helm install rabbitmq --set auth.username=admin,auth.password=passw0rd123,auth.erlangCookie=secretcookie,persistence.existingClaim=data-rabbitmq bitnami/rabbitmq -n rabbitmq
+helm install rabbitmq --set auth.username=admin,auth.password=password,auth.erlangCookie=secretcookie,persistence.existingClaim=data-rabbitmq bitnami/rabbitmq -n rabbitmq
 ```
 
 Your Output will look similar to this 
@@ -75,7 +70,6 @@ To Access the RabbitMQ Management interface:
 Execute below command to check status of pods and services: 
 
 ### Check the pod status
-
 
 ```execute
 kubectl get pods --namespace rabbitmq
