@@ -3,69 +3,7 @@ title: Verify rabbitmq Chart Installation
 description: This tutorial explains how to verify that rabbitmq chart installed successfully
 --
 
-### Setting up RabbitMq
-
-**To Create Namespace**
-
-The default installaion of RabbitMq Helm chart requires the use of Persistent Volume. The following command creates a Persistent Volume Claim manifest.
-
-```execute
-cat <<EOF | kubectl apply -f -
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: data-rabbitmq
-   namespace: rabbitmq
-   annotations:
-     volume.beta.kubernetes.io/storage-class: "default"
- spec:
-   accessModes:
-     - ReadWriteOnce
-   resources:
-     requests:
-       storage: 10Gi
- EOF
-```
-
-```
-helm install rabbitmq --set auth.username=admin,auth.password=password,auth.erlangCookie=secretcookie,persistence.existingClaim=data-rabbitmq bitnami/rabbitmq -n rabbitmq
-```
-
-Your Output will look similar to this 
-
-```
-NAME: rabbitmq
-LAST DEPLOYED: Wed Feb  3 14:49:03 2021
-NAMESPACE: rabbitmq
-STATUS: deployed
-REVISION: 1
-TEST SUITE: None
-NOTES:
-** Please be patient while the chart is being deployed **
-
-Credentials:
-
-    echo "Username      : admin"
-    echo "Password      : $(kubectl get secret --namespace rabbitmq rabbitmq -o jsonpath="{.data.rabbitmq-password}" | base64 --decode)"
-    echo "ErLang Cookie : $(kubectl get secret --namespace rabbitmq rabbitmq -o jsonpath="{.data.rabbitmq-erlang-cookie}" | base64 --decode)"
-
-RabbitMQ can be accessed within the cluster on port  at rabbitmq.rabbitmq.svc.
-
-To access for outside the cluster, perform the following steps:
-
-To Access the RabbitMQ AMQP port:
-
-    echo "URL : amqp://127.0.0.1:5672/"
-    kubectl port-forward --namespace rabbitmq svc/rabbitmq 5672:5672
-
-To Access the RabbitMQ Management interface:
-
-    echo "URL : http://127.0.0.1:15672/"
-    kubectl port-forward --namespace rabbitmq svc/rabbitmq 15672:15672
-    
-```
-
-**Once the helm chart installation done you need to verify all the pods and services are up and running**
+Once the helm chart installation done you need to verify all the pods and services are up and running
 
 Execute below command to check status of pods and services: 
 
@@ -211,10 +149,6 @@ Events:
  Output will be similar to this
  
  ```
- Forwarding from 127.0.0.1:15672 -> 15672
-Forwarding from [::1]:15672 -> 15672
-^C[student@event-k8s-ibm-operators-playground-vbpdqc ~]$ kubectl port-forward pod/rabbitmq-0 0.0.0.0/15672:15672 -n rabbitmq
-error: error parsing local port '0.0.0.0/15672': strconv.ParseUint: parsing "0.0.0.0/15672": invalid syntax
 [student@event-k8s-ibm-operators-playground-vbpdqc ~]$ kubectl port-forward pod/rabbitmq-0 15672:15672 --address 0.0.0.0 -n rabbitmq
 Forwarding from 0.0.0.0:15672 -> 15672
 Handling connection for 15672
