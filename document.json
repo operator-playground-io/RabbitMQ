@@ -1,7 +1,7 @@
 {
   "name": "RabbitMq Helm Chart",
   "description": "RabbitMq Bitnami Helm Chart",
-  "logo": "rabbitmq-logo.png",
+  "logo": "_images/rabbitmq-logo.png",
   "has_supporting_content": true,
   "stack_id": "",
   "type": "Helm",
