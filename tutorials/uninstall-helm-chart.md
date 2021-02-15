@@ -45,12 +45,14 @@ Error: release: not found
 ### Cleanup other resources
 
 
-To delete the PVCs created, execute the below commands:
+If the RabbitMQ is created with Persistent Volume Claims (PVC) enabled. Then list the PVCs using the command shown below:
 
-```execute
+```copy
 kubectl -n rabbitmq get pvc | grep rabbitmq
 ```
 
-```execute
-kubectl -n rabbitmq delete pvc/PVC_VOLUME
+Delete the PVC using their names
+
+```copy
+kubectl -n rabbitmq delete pvc/<PVC_NAME>
 ```
