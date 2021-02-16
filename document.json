@@ -3,7 +3,7 @@
   "description": "RabbitMq Bitnami Helm Chart",
   "logo": "_images/rabbitmq-logo.png",
   "has_supporting_content": true,
-  "stack_id": "",
+  "stack_id": "RabbitMq-bitnami-chart",
   "type": "Helm",
   "categories": ["Conterization"],
   "platform": "Kubernetes",
